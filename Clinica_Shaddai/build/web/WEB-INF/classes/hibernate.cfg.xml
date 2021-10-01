@@ -51,7 +51,7 @@ Contributor(s):
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/dbclinica</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">2841995</property>
+    <property name="hibernate.connection.password"></property>
     <property name="hibernate.show_sql"/>
     <mapping class="common.usuario"/>
   </session-factory>

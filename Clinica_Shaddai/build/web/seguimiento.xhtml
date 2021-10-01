@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+    <title>Seguimiento</title>
+    <!-- Necessary libraries and adjustments of Bootstrap for responsiveness -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <link href="Resources/css/styles.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body class="back">
+         <div class="container white">
+        
+        <h1>Mantenimiento de Seguimiento de Paciente </h1><br>
+
+        <!-- Dummy Form, on submitting goes nowhere -->
+        <form action="">
+        <div class="form-group">
+        <label>Correlativo</label>
+        <input  class="form-control" type="number"/>
+        </div>
+        <div class="form-group">
+            <label>Seguimiento</label>
+            <input  class="form-control" type="text"/>
+            </div>
+            <div class="form-group">
+                <label>Detalle</label>
+                <textarea  class="form-control" type="text"></textarea>
+            </div>
+        <div class="form-group">
+        <label>Fecha de Seguimiento</label>
+        <input class="form-control" type="date"/>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-default">Cancelar</button>
+        </form>
+
+        </br>
+
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </h:body>
+</html>

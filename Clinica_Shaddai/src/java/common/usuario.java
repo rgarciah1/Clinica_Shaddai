@@ -2,8 +2,10 @@ package common;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import org.hibernate.Query;
@@ -62,7 +64,9 @@ public class usuario implements Serializable {
             
             System.out.println("list size "+lista.size());
               if(lista.size()==1){
+                  FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Contraseña incorrecta"));
                   return true;
+                   
               }else{
                   return false;
               }

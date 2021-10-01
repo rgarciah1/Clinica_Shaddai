@@ -115,24 +115,23 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form class="row g-3">
-                <div class="col-md-6">
-                  <label for="inputEmail4" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail4"/>
-                </div>
-                <div class="col-md-6">
-                  <label for="inputPassword4" class="form-label">Contraseña</label>
-                  <input type="password" class="form-control" id="inputPassword4"/>
-                </div>
-                
-                <div class="col-12">
-                  <button type="button" class="btn btn-primary">Logueate</button>
-                </div>
-              </form>
+            <h:form class="row g-3">
+            <div class="col-md-6">
+            User Name: <h:inputText value="#{usuario_beam.usuario}" class="form-control" ></h:inputText>
+            </div>
+            <br></br>
+            <div class="col-md-6">
+            Password: <h:inputSecret value="#{usuario_beam.clave}" class="form-control" ></h:inputSecret>
+            </div>
+            <br></br>
+            <div class="col-12">
+            <h:commandButton action="#{usuario_beam.inicioSesion()}" value="Iniciar Sesión"  class="btn btn-primary"></h:commandButton>
+            </div>
+            <br></br>
+        </h:form>  
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
