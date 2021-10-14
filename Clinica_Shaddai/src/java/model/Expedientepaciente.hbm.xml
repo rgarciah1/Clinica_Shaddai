@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 7, 2021 7:16:24 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Expedientepaciente" table="expedientepaciente" catalog="dbclinica" optimistic-lock="version">
+        <id name="idExpediente" type="int">
+            <column name="idExpediente" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="usuarioByIdPaciente" class="model.Usuario" fetch="select">
+            <column name="idPaciente" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuarioByIdDoctor" class="model.Usuario" fetch="select">
+            <column name="idDoctor" not-null="true" />
+        </many-to-one>
+        <property name="titulo" type="string">
+            <column name="titulo" length="50" not-null="true" />
+        </property>
+        <set name="seguimientopacientes" table="seguimientopaciente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idExpediente" not-null="true" />
+            </key>
+            <one-to-many class="model.Seguimientopaciente" />
+        </set>
+    </class>
+</hibernate-mapping>

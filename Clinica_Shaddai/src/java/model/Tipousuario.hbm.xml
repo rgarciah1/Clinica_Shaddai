@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 7, 2021 7:16:24 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Tipousuario" table="tipousuario" catalog="dbclinica" optimistic-lock="version">
+        <id name="idTipoUsuario" type="java.lang.Integer">
+            <column name="idTipoUsuario" />
+            <generator class="identity" />
+        </id>
+        <property name="tipo" type="string">
+            <column name="tipo" length="25" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

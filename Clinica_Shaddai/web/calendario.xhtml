@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">   
+    <h:head>
+
+        <title>TODO supply a title</title>
+        <script src="Resources/js/scripts.js" type="text/javascript"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.9.0/main.min.js" type="text/javascript"></script>
+        <link href="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.9.0/main.min.css" rel="stylesheet" type="text/css"/>
+
+
+    </h:head>
+
+    <body>
+        <div></div>
+
+        <div class="modal-body">
+            <h:form class="row g-3">
+                <div class="col-md-6">
+                    User Name: <h:outputLabel value="#{citaBean.usuario}" class="form-control" ></h:outputLabel>
+                </div>
+
+            </h:form>
+            <h:form  style="display: none">
+                ------------------LIST------------------
+                <div >
+                    <p:dataList  value="#{citaBean.citas}" var="cita">
+                        <h:outputText value="" id="sixe" />
+                        <h:outputText value="#{cita.fechaCita}" id="fecha" />
+                        <h:outputText value="#{cita.titulo}" id="titulo" />
+                    </p:dataList>
+                </div>
+            </h:form>
+
+            <div id='calendar' style="width: 50%"></div>
+        </div>
+        <script>
+            //<![CDATA[
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var calendarEl = document.getElementById('calendar');
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth',
+                    initialDate: '2021-10-10',
+                    headerToolbar: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                    }
+                }
+                );
+                for (var i = 0; i < #{citaBean.citas.size()}; i++) {
+
+                    var date = document.getElementById('j_idt10:j_idt12:' + i + ':fecha').innerHTML.toString()
+                    var title = document.getElementById('j_idt10:j_idt12:' + i + ':titulo').innerHTML.toString()
+                    calendar.addEvent({title: title, start: date});
+
+                }
+                calendar.render();
+            });
+
+
+
+
+//]]>
+        </script>
+
+
+
+    </body>
+
+</html>

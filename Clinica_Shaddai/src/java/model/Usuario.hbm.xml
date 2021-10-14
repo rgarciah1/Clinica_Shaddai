@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 7, 2021 7:16:24 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Usuario" table="usuario" catalog="dbclinica" optimistic-lock="version">
+        <id name="idUsuario" type="java.lang.Integer">
+            <column name="idUsuario" />
+            <generator class="identity" />
+        </id>
+        <property name="idPersona" type="int">
+            <column name="idPersona" not-null="true" />
+        </property>
+        <property name="idTipoUsuario" type="int">
+            <column name="idTipoUsuario" not-null="true" />
+        </property>
+        <property name="usuario" type="string">
+            <column name="usuario" length="15" not-null="true" />
+        </property>
+        <property name="clave" type="string">
+            <column name="clave" length="15" not-null="true" />
+        </property>
+        <property name="habilitado" type="string">
+            <column name="habilitado" length="1" not-null="true" />
+        </property>
+        <property name="fechaUsaurio" type="timestamp">
+            <column name="fecha_usaurio" length="19" not-null="true" />
+        </property>
+        <set name="expedientepacientesForIdPaciente" table="expedientepaciente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPaciente" not-null="true" />
+            </key>
+            <one-to-many class="model.Expedientepaciente" />
+        </set>
+        <set name="citasForIdUsuario" table="cita" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idUsuario" not-null="true" />
+            </key>
+            <one-to-many class="model.Cita" />
+        </set>
+        <set name="expedientepacientesForIdDoctor" table="expedientepaciente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idDoctor" not-null="true" />
+            </key>
+            <one-to-many class="model.Expedientepaciente" />
+        </set>
+        <set name="citasForIdDoctor" table="cita" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idDoctor" not-null="true" />
+            </key>
+            <one-to-many class="model.Cita" />
+        </set>
+        <set name="citasForIdPaciente" table="cita" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPaciente" not-null="true" />
+            </key>
+            <one-to-many class="model.Cita" />
+        </set>
+    </class>
+</hibernate-mapping>

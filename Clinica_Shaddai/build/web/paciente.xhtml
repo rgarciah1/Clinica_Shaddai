@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+< h:head>
+    
+    < h:title>Pacientes</ h:title>
+    < h:meta charset="utf-8" />
+    < h:meta name="viewport" content="width=device-width, initial-scale=1" />
+    < h:link rel="stylesheet" href="https://maxcdn.bootstr/apcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    < h:link rel="stylesheet" href="./css/styles.css" /> 
+    
+</ h:head >
+< h:body class="back" >
+
+    <div class="container white">
+        
+        <h1>Mantenimiento de Pacientes</h1><br/>
+
+        <!-- Dummy Form, on submitting goes nowhere -->
+        <form action="">
+        <div class="form-group">
+        <label>Nombre del Paciente</label>
+        < h:input  class="form-control" type="text">
+        </div >
+        <div class="form-group" >
+            <label>Direccion</label >
+            < h:input  class="form-control" type="text" >
+            </div >
+            <div class="form-group" >
+                <label>Correo</label >
+                < h:input  class="form-control" type="text" >
+                </div >
+        <div class="form-group" >
+        <label>Fecha de Nacimiento</label>
+        < h:input class="form-control" type="date" >
+        </div >
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary">Cancelar</button>
+        </form>
+
+        <br>
+
+    </div >
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</ h:body>
+</html >
